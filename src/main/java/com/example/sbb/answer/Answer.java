@@ -1,5 +1,6 @@
 package com.example.sbb.answer;
 
+import com.example.sbb.SiteUser;
 import com.example.sbb.question.Question;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -21,4 +22,7 @@ public class Answer {
 
     @ManyToOne
     private Question question;
+
+    @ManyToOne
+    private SiteUser author;
 }

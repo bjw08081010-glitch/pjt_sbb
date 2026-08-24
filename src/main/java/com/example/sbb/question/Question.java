@@ -1,5 +1,6 @@
 package com.example.sbb.question;
 
+import com.example.sbb.SiteUser;
 import com.example.sbb.answer.Answer;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -26,5 +27,9 @@ import java.util.List;
         // 질문 / 답변 --> 부모 / 자식 , 질문 삭제되면 답변들도 삭제 되어야 한다.
         @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
         private List<Answer> answerList;  // 복수개의 답변을 저장하려면 --> List 구조 --> 제너릭 --> Answer 타입 지정
+
+        @ManyToOne
+        private SiteUser author;
+
     }
 
