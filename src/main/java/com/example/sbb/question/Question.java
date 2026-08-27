@@ -3,10 +3,13 @@ package com.example.sbb.question;
 import com.example.sbb.SiteUser;
 import com.example.sbb.answer.Answer;
 import jakarta.persistence.*;
+import jakarta.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
+
 
     @Getter
     @Setter
@@ -32,6 +35,9 @@ import java.util.List;
         private SiteUser author;
 
         private LocalDateTime modifyDate;
+
+        @ManyToMany
+        Set<SiteUser> voter;
 
     }
 
